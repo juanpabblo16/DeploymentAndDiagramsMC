@@ -4,7 +4,7 @@ The development of the deployment and design of the deployment diagrams of the s
 - BD CREADA - xhgrid10
 - SERVIDOR CENTRAL - xhgrid11
 - CLIENTES - xhgrid13
-- CLIENTES - xhgrid14
 - CLIENTES - xhgrid15
 - CLIENTES - xhgrid16
+- CLIENTES - xhgrid17
 
