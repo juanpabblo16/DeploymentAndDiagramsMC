@@ -20,37 +20,37 @@ Paso 1: Creación de la Base de Datos
 
 cssCopy code
 
-`ssh nombre-usuario@direccion-servidor`
+`ssh postgres@xhgridX`
 
 ### 1.2 Navegación a la Carpeta con Archivos SQL
 
 bashCopy code
 
-`cd /ruta/remota`
+`cd /Code-2023-04-14/scripts`
 
 ### 1.3 Inicio del Cliente de PostgreSQL
 
 undefinedCopy code
 
-`psql -U nombre-usuario -d postgres`
+`psql -U postgres -d postgres`
 
 ### 1.4 Creación de la Base de Datos
 
 csharpCopy code
 
-`CREATE DATABASE nombre-base-datos;`
+`CREATE DATABASE CoffeeMach;`
 
 ### 1.5 Conexión a la Nueva Base de Datos
 
 csharpCopy code
 
-`\c nombre-base-datos`
+`\c CoffeeMach`
 
 ### 1.6 Ejecución de Scripts SQL
 
 cssCopy code
 
-`\i archivo1.sq  \i archivo2.sql`
+`\i coffeeMach-user.sql \i coffeeMach-ddl.sql  \i coffeeMach-inserts.sql`
 
 ### 1.7 Salida del Cliente de PostgreSQL
 
@@ -65,7 +65,7 @@ Paso 2: Despliegue del Proyecto
 
 cssCopy code
 
-`ssh nombre-usuario@direccion-servidor`
+`ssh swarch@xhgridX`
 
 ### 2.2 Ejecución de `gradle build` en el Proyecto
 
