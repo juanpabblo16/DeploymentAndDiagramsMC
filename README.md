@@ -109,4 +109,3 @@ Acceder a las interfaces gráficas o utilizar comandos adicionales para verifica
 
 * * *
 
-Este informe detalla el proceso de creación de la base de datos y el despliegue del proyecto. Asegúrate de ajustar las rutas, nombres de usuario y otros detalles según tu configuración específica. Este proceso asume que ya tienes el entorno y las dependencias necesarias configuradas en las máquinas remotas.
