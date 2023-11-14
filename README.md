@@ -1,113 +1,137 @@
-# DeploymentAndDiagramsMC
-The development of the deployment and design of the deployment diagrams of the system of coffee machines interconnected between them and a central server.
+DeploymentAndDiagramsMC - Project Report
+========================================
 
-- BD CREADA - Postgres@xhgrid9
-- SERVIDOR CENTRAL - swarch@xhgrid9
-- CLIENTES - xhgrid13
-- CLIENTES - xhgrid15
-- CLIENTES - xhgrid16
-- CLIENTES - xhgrid17
+Project Overview
+----------------
 
-* * *
-**Copiado de archivos**
+The DeploymentAndDiagramsMC project focuses on developing the deployment and design of deployment diagrams for a system of interconnected coffee machines with a central server. The project contributors include Juan Pablo Acevedo, Jesus Garces, and Martin Cifuentes.
 
-Paso 0: Copiar archivo fuente a los equipos donde se van a desplegar
+### Remote Environments
 
-` 
-  //Abrir una consola en Cyguin y parate en la carpeta donde tienes el archivo con el proyecto
- 
-  scp Code-2023-04-14.zip postgres@xhgrid9:
+*   **Postgres Database:** `postgres@xhgrid9`
+*   **Central Server:** `swarch@xhgrid9`
+*   **Client 1:** `swarch@xhgrid13`
+*   **Client 2:** `swarch@xhgrid15`
+*   **Client 3:** `swarch@xhgrid16`
+*   **Client 4:** `swarch@xhgrid17`
 
-  scp Code-2023-04-14.zip swarch@xhgrid9:
- 
-  scp Code-2023-04-14.zip swarch@xhgrid13:
- 
-  scp Code-2023-04-14.zip swarch@xhgrid15:
- 
-  scp Code-2023-04-14.zip swarch@xhgrid16:
- 
-  scp Code-2023-04-14.zip swarch@xhgrid17:
-`
+File Copying
+------------
 
-Despliegue del Proyecto y Creación de la Base de Datos
-======================================================
+Before initiating the deployment, source files are copied to the target machines using `scp` commands. Ensure you are in the project folder:
 
-Paso 1: Creación de la Base de Datos
-------------------------------------
+graphqlCopy code
 
-### 1.1 Acceso a la Máquina Remota
+`scp Code-2023-04-14.zip postgres@xhgrid9: scp Code-2023-04-14.zip swarch@xhgrid9: scp Code-2023-04-14.zip swarch@xhgrid13: scp Code-2023-04-14.zip swarch@xhgrid15: scp Code-2023-04-14.zip swarch@xhgrid16: scp Code-2023-04-14.zip swarch@xhgrid17:`
+
+Deployment and Database Creation
+--------------------------------
+
+### Step 1: Database Creation
+
+#### 1.1 Access Remote Machine
+
+cssCopy code
 
 `ssh postgres@xhgridX`
 
-### 1.2 Navegación a la Carpeta con Archivos SQL
+#### 1.2 Navigate to SQL Script Folder
+
+bashCopy code
 
 `cd /Code-2023-04-14/scripts`
 
-### 1.3 Inicio del Cliente de PostgreSQL
+#### 1.3 Start PostgreSQL Client
+
+undefinedCopy code
 
 `psql -U postgres -d postgres`
 
-### 1.4 Creación de la Base de Datos
+#### 1.4 Create Database
+
+sqlCopy code
 
 `CREATE DATABASE CoffeeMach;`
 
-### 1.5 Conexión a la Nueva Base de Datos
+#### 1.5 Connect to New Database
+
+rCopy code
 
 `\c CoffeeMach`
 
-### 1.6 Ejecución de Scripts SQL
+#### 1.6 Execute SQL Scripts
 
-`\i coffeeMach-user.sql \i coffeeMach-ddl.sql  \i coffeeMach-inserts.sql`
+cssCopy code
 
-### 1.7 Salida del Cliente de PostgreSQL
+`\i coffeeMach-user.sq  \i coffeeMach-ddl.sq  \i coffeeMach-inserts.sql`
+
+#### 1.7 Exit PostgreSQL Client
+
+cssCopy code
 
 `\q`
 
-Paso 2: Despliegue el Servidor
--------------------------------
-### 2.1 Abrir Xming
-### 2.2 Abrir PuTTYunzip Code-2023-04-14.zip
-### 2.3 Ingesar la direccion a la que te quieres conectar(la casilla ssh debe estar marcada)
-### 2.4 Dar click en ssh en la parte inferior izquierda, dar click en X11 marcar la casilla "Enable X11 forwading"
-### 2.5 Dar click en open
-### 2.6 Hacer build
+### Step 2: Server Deployment
 
-`cd /Code-2023-04-14/coffeemach`
+#### 2.1 Open Xming
 
-`gradle build`
-### 2.7 Ejecutar ServidorCentral
+#### 2.2 Open PuTTY
 
-`cd ServidorCentral/build/libs`
+#### 2.3 Enter the connection address and enable X11 forwarding
 
-`java -jar ServidorCentral.jar`
+#### 2.4 Click "Open"
 
-Paso 3: Despliegue de la máquina de café
------------------------------------------
-## 3.1 Conección al dispositivo
-### 3.1.1 Iniciar Xming
-### 3.1.2 Abrir PuTTY
-### 3.1.3 Poner el host com "swarch@xhgridX"
-### 3.1.4 Poner el tipo de conección como SSH
-### 3.1.5 Entrar a X11 y activar la opción "Enable X11 forearding"
-### 3.1.6 Presionar "Open"
+#### 2.5 Build the Project
 
-## 3.2 Editar puertos de la Máquina de café
-### 3.2.1 Ingresar a la carpeta del proyecto con "cd Carpeta", si es necesario realizar unzip
-### 3.2.2 Usar el comando "mc" para explorar el proyecto
-### 3.2.3 Estando en mc, entrar en coffeemach/coffeeMach/src/main/resources y editar el archivo coffeeMach.cfg con "i"
-### 3.2.4 Se modifica la ip de CoffeeMach.Endpoints por la del hgrid actual y las de alarmas, ventas y recetas por el hgrid y el puerto donde está corriendo el servidor 
-### 3.2.5 Se guarda todo con "esc" y ":x"
+bashCopy code
 
-## 3.3 Ejecutar La Máquina de café
-### 3.3.1 Posicionados en coffeemach ejecutar el comando "gradle build"
-### 3.3.2 Luego en coffeemach/coffeeMach/build/libs se ejecuta java -jar coffeeMach.jar
+`cd /Code-2023-04-14/coffeemach gradle build`
+
+#### 2.6 Execute Central Server
+
+bashCopy code
+
+`cd ServidorCentral/build/libs java -jar ServidorCentral.jar`
+
+### Step 3: Coffee Machine Deployment
+
+#### 3.1 Connect to the Device
+
+##### 3.1.1 Start Xming
+
+##### 3.1.2 Open PuTTY
+
+##### 3.1.3 Set the host as "swarch@xhgridX"
+
+##### 3.1.4 Choose SSH connection
+
+##### 3.1.5 Enable X11 forwarding
+
+##### 3.1.6 Press "Open"
+
+#### 3.2 Edit Coffee Machine Ports
+
+##### 3.2.1 Navigate to the project folder with "cd Folder"
+
+##### 3.2.2 Use the command "mc" to explore the project
+
+##### 3.2.3 While in mc, enter coffeemach/coffeeMach/src/main/resources and edit coffeeMach.cfg with "i"
+
+##### 3.2.4 Modify the IP and ports in the configuration file
+
+##### 3.2.5 Save changes with "esc" and ":x"
+
+#### 3.3 Execute the Coffee Machine
+
+##### 3.3.1 In the coffeemach folder, run "gradle build"
+
+##### 3.3.2 Then, in coffeemach/coffeeMach/build/libs, execute `java -jar coffeeMach.jar`
 
 * * *
-# Colaboradores
 
-* **Jesus Garces**
-  
-* **Juan Pablo Acevedo**
-  
-* **Martin Cifuentes**
+Contributors
+------------
 
+*   **Jesus Garces**
+*   **Juan Pablo Acevedo**
+*   **Martin Cifuentes**
