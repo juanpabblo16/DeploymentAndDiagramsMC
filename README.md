@@ -103,9 +103,11 @@ Paso 3: Despliegue de la máquina de café
 ### 3.3.2 Luego en coffeemach/coffeeMach/build/libs se ejecuta java -jar coffeeMach.jar
 
 * * *
-# Colaboradore
+# Colaboradores
 
--Jesus Garces
--Juan Pablo Acevedo
--Martin Cifuentes
+* Jesus Garces
+* 
+* Juan Pablo Acevedo
+* 
+* Martin Cifuentes
 
