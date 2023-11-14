@@ -22,12 +22,12 @@ Before initiating the deployment, source files are copied to the target machines
 
 graphqlCopy code
 
-`scp Code-2023-04-14.zip postgres@xhgrid9: 
-scp Code-2023-04-14.zip swarch@xhgrid9: 
-scp Code-2023-04-14.zip swarch@xhgrid13: 
-scp Code-2023-04-14.zip swarch@xhgrid15: 
-scp Code-2023-04-14.zip swarch@xhgrid16: 
-scp Code-2023-04-14.zip swarch@xhgrid17:`
+- `scp Code-2023-04-14.zip postgres@xhgrid9:` 
+- `scp Code-2023-04-14.zip swarch@xhgrid9:` 
+- `scp Code-2023-04-14.zip swarch@xhgrid13:` 
+- `scp Code-2023-04-14.zip swarch@xhgrid15:` 
+- `scp Code-2023-04-14.zip swarch@xhgrid16:`
+- `scp Code-2023-04-14.zip swarch@xhgrid17:`
 
 Deployment and Database Creation
 --------------------------------
