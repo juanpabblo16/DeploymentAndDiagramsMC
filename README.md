@@ -105,9 +105,9 @@ Paso 3: Despliegue de la máquina de café
 * * *
 # Colaboradores
 
-* Jesus Garces
-* 
-* Juan Pablo Acevedo
-* 
-* Martin Cifuentes
+* **Jesus Garces**
+  
+* **Juan Pablo Acevedo**
+  
+* **Martin Cifuentes**
 
