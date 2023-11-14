@@ -53,8 +53,6 @@ Paso 1: Creación de la Base de Datos
 
 ### 1.5 Conexión a la Nueva Base de Datos
 
-csharpCopy code
-
 `\c CoffeeMach`
 
 ### 1.6 Ejecución de Scripts SQL
@@ -73,10 +71,14 @@ Paso 2: Despliegue el Servidor
 ### 2.4 Dar click en ssh en la parte inferior izquierda, dar click en X11 marcar la casilla "Enable X11 forwading"
 ### 2.5 Dar click en open
 ### 2.6 Hacer build
+
 `cd /Code-2023-04-14/coffeemach`
+
 `gradle build`
 ### 2.7 Ejecutar ServidorCentral
+
 `cd ServidorCentral/build/libs`
+
 `java -jar ServidorCentral.jar`
 
 Paso 3: Despliegue de la máquina de café
@@ -100,6 +102,10 @@ Paso 3: Despliegue de la máquina de café
 ### 3.3.1 Posicionados en coffeemach ejecutar el comando "gradle build"
 ### 3.3.2 Luego en coffeemach/coffeeMach/build/libs se ejecuta java -jar coffeeMach.jar
 
-
 * * *
+# Colaboradore
+
+-Jesus Garces
+-Juan Pablo Acevedo
+-Martin Cifuentes
 
